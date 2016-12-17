@@ -1,10 +1,12 @@
 # JavaScript Primer
 
-While ES2015 becomes more ubiquitous each passing day,
-not every developer has had the chance to dive into the new capabilities of the language.
+While the Guides [assume you have a working knowledge of JavaScript](/#toc_assumptions),
+using the language in the context of a new framework can be confusing,
+especially if you are newer to the ecosystem.
+On top of that, the [EcmaScript 2015](https://developer.mozilla.org/en/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla) and following specifications have introduced features to JavaScript that developers may have not had a chance to get familiar with yet.
 
-In this guide we will be going over some of the features introduced by ES2015 and up,
-and how to use them in the context of an Ember application.
+In this guide we will be covering some common JavaScript code patterns that appear in Ember applications,
+so you can get a clearer sense of where the language ends and the framework starts.
 
 ## Properties
 
