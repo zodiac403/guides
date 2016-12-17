@@ -43,7 +43,7 @@ export default Ember.Component.extend({
 
 ## `const`, `let`
 
--> const binding
+-> `const` binding
 
 ```javascript
 const a = "hello";
