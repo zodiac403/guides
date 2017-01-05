@@ -12,6 +12,9 @@ cd $DEPLOY
 echo "Installing Firebase tools for deploys"
 npm install firebase-tools@^2.1 -g
 
+echo "Installing Netlify tools for secondary deploys"
+npm install netlify-cli -g
+
 git clone $REPO
 
 # get latest version so we can copy our files to the right snapshot dir
@@ -34,3 +37,7 @@ node tasks/update-versions.js
 
 # do the deploy to production
 firebase deploy
+
+# Need to get permissions / tokens sorted out
+# might need to use -t <token-here> for this
+netlify deploy -s ca5334ce-40e8-4c25-a26a-0d1e36e609c2 -p .
