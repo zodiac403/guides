@@ -3,6 +3,7 @@
 While the Guides [assume you have a working knowledge of JavaScript](/#toc_assumptions),
 using the language in the context of a new framework can be confusing,
 especially if you are newer to the ecosystem.
+
 On top of that, the [EcmaScript 2015](https://developer.mozilla.org/en/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla) and following specifications have introduced features to JavaScript that developers may have not had a chance to get familiar with yet.
 
 In this guide we will be covering some common JavaScript code patterns that appear in Ember applications,
