@@ -15,7 +15,7 @@
     - title: "Core Concepts"
       url: "core-concepts"
     - title: "JavaScript Primer"
-      url: "es-primer"
+      url: "js-primer"
 
 - title: "Tutorial"
   url: 'tutorial'
