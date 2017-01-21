@@ -4,12 +4,65 @@ While the Guides [assume you have a working knowledge of JavaScript](/#toc_assum
 using the language in the context of a new framework can be confusing,
 especially if you are newer to the ecosystem.
 
-On top of that, the [EcmaScript 2015](https://developer.mozilla.org/en/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla) and following specifications have introduced features to JavaScript that developers may have not had a chance to get familiar with yet.
+On top of that, the [EcmaScript 2015](https://developer.mozilla.org/en/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla) (also known as ES6) and following specifications have introduced features to JavaScript that developers may have not had a chance to get familiar with yet.
 
 In this guide we will be covering some common JavaScript code patterns that appear in Ember applications,
 so you can get a clearer sense of where the language ends and the framework starts.
 
-## Properties
+## `var`, `let`, `const`
+
+For a long while, the way to declare a variable in JavaScript was using `var`:
+
+```javascript
+var greeting = "Hello World";
+```
+
+But when the ES2015 specification was released, two new ways were introduced,
+`let` and `const`.
+I'll first explain how `let` and `const` are different from `var`,
+and then a detail about `const`.
+
+### Lexical scoping
+
+`const` and `let` are called 
+
+-> `const` binding
+
+```javascript
+const a = "hello";
+a = "bye"; // error
+```
+
+This is fine because you aren't changing the binding, that is, the value of `a` itself doesn't change.
+
+```javascript
+const a = { greeting: "good morning" };
+a.greeting = "good night";
+```
+
+## Object properties
+
+One quirk of the JavaScript language that commonly trips up developers if that if you define an array or object property directly in your class,
+every instance of that class will share the same array/object.
+Let's look at an example to make it clearer.
+
+We will start with a Framework class, with a string `language` property, and a versions array.
+If you are not familiar with the `class` syntax, you can read about it on [the MDN reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+We will be using the `class` syntax, if you are not familiar you can read more on 
+We'll then create two instances of that class, `ember` and `phoenix`.
+
+```javascript
+const Framework = Object.create({
+  language: 'JavaScript',
+  versions: []
+});
+
+let ember = Object.create(Framework);
+let phoenix = Object.create(Framework);
+```
+
+
+
 
 ```javascript
 export default Ember.Component.extend({
@@ -42,21 +95,6 @@ export default Ember.Component.extend({
 
 -> exports
 
-## `const`, `let`
-
--> `const` binding
-
-```javascript
-const a = "hello";
-a = "bye"; // error
-```
-
-This is fine because you aren't changing the binding, that is, the value of `a` itself doesn't change.
-
-```javascript
-const a = { greeting: "good morning" };
-a.greeting = "good night";
-```
 
 ## Arrow functions
 
