@@ -9,7 +9,7 @@ It's super handy for taking one or more normal properties and transforming or ma
 ### Computed properties in action
 
 We'll start with a simple example.
-We have a `Person` object with `firstName` and `lastName` properties, but we also want to a `fullName` property that will update whether one of the names changes so it can join them:
+We have a `Person` object with `firstName` and `lastName` properties, but we also want a `fullName` property that joins the two names when either of them changes:
 
 ```javascript
 Person = Ember.Object.extend({
@@ -34,13 +34,13 @@ ironMan.get('fullName'); // "Tony Stark"
 ```
 
 This declares `fullName` to be a computed property, with `firstName` and `lastName` as the properties it depends on.
-The first time you access the `fullName` property, the function backing the computed property (i.e. the last argument) will be run and the results will be cached.
+The first time you access the `fullName` property, the function will be called and the results will be cached.
 Subsequent access of `fullName` will read from the cache without calling the function.
 Changing any of the dependent properties causes the cache to invalidate, so that the computed function runs again on the next access.
 
 ### Multiple dependents on the same object
 
-In the previous example, the `fullName` computed property dependend on two other properties:
+In the previous example, the `fullName` computed property dependens on two other properties:
 
 ```javascript
 …
@@ -54,7 +54,7 @@ In the previous example, the `fullName` computed property dependend on two other
 ```
 
 We can also use a short-hand syntax called _brace expansion_ to declare the dependents.
-You surround the dependent properties with braces (`{}`), and separate with `,`:
+You surround the dependent properties with braces (`{}`), and separate with commas, like so:
 
 ```javascript
 …
