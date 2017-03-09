@@ -40,7 +40,7 @@ Changing any of the dependent properties causes the cache to invalidate, so that
 
 ### Multiple dependents on the same object
 
-In the previous example, the `fullName` computed property dependens on two other properties:
+In the previous example, the `fullName` computed property depends on two other properties:
 
 ```javascript
 …
