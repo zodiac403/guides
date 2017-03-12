@@ -44,7 +44,7 @@ Calling the function `this.route(routeName)`, tells the Ember router to load the
 In this case when the user navigates to `/about`, the route handler represented by `/app/routes/about.js` will be used.
 See the guide for [defining routes](../../routing/defining-your-routes/) for more details.
 
-```app/router.js
+```app/router.js{+10}
 import Ember from 'ember';
 import config from './config/environment';
 
@@ -148,7 +148,7 @@ When we look at our about page at [`http://localhost:4200/about`](http://localho
 
 Now, we'll add a link to our contact page so we can navigate back and forth between `about` and `contact`.
 
-```app/templates/contact.hbs
+```app/templates/contact.hbs{+15,+16,+17}
 <div class="jumbo">
   <div class="right tomster"></div>
   <h2>Contact Us</h2>
